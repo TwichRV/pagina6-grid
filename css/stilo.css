@@ -1,0 +1,160 @@
+:root {
+    --dark-gray: hsl(0, 0%, 63%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --very-dark-gray: hsl(0, 0%, 27%);
+    --league: "League Spartan", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--league);
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 60px 0;
+}
+.main{
+    display: grid;
+    max-width: 1400px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5,max-content);
+    grid-template-areas:
+    "main"
+    "cta"
+    "image1"
+    "about"
+    "image2"
+    ;
+}
+.main_hero{
+    grid-area: main;
+    background-image: url(../images/desktop-image-hero-1.jpg);
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+.main_nav{
+    display: flex;
+}
+.main_links{
+    display: none;
+}
+.main_logo{
+    margin: 0 auto;
+}
+.main_controls{
+    grid-area: main;
+    align-self: end;
+    justify-self: end;
+    background-color: var(--black);
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.main_control{
+    height: 40%;
+}
+.main_discover{
+    grid-area: cta;
+}
+.discover_info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+.discover_title{
+    color: var(--black);
+}
+.discover_paragraph{
+    color: var(--dark-gray);
+    margin: 1em 0 2em;
+    line-height: 1.5;
+}
+.shop{
+    text-decoration: none;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color:var(--very-dark-gray);
+}
+.shop_img{
+    margin-left: 20px;
+}
+.main_black{
+    grid-area: image1;
+    min-height: 250px;
+    height: 100%;
+    background-image: url(../images/image-about-dark.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.about{
+    grid-area: about;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about_paragraph{
+    margin: 1em 0 0 0;
+}
+.main_white{
+    grid-area: image2;
+    background-image: url(../images/image-about-light.jpg);
+}
+@media screen and (770px <= width) {
+    /* .container{
+        width: 80%;
+        padding: 70px 0;
+    } */
+    .main{
+        grid-template-columns: repeat(7,1fr);
+        grid-template-areas:
+        "main main main main cta cta cta"
+        "main main main main cta cta cta"
+        "main main main main cta cta cta"
+        "image1 image1 about about about image2 image2"
+        "image1 image1 about about about image2 image2"
+        ;
+    }
+    .main_hamburgure{
+        display: none;
+    }
+    .main_links{
+        padding: 0;
+        display: grid;
+        grid-auto-flow: column; 
+        gap: 10px;
+        margin-left: 10%;
+    }
+    .main_logo{
+        margin: 0;
+    }
+    .main_list{
+        list-style: none;
+    }
+    .main_link{
+        color: var(--white);
+        text-decoration: none;
+    }
+    .discover_title{
+        font-size: 2.5rem;
+
+    }
+    .main_controls{
+        grid-area: cta;
+        justify-self: start;
+    }
+  
+    
+}
